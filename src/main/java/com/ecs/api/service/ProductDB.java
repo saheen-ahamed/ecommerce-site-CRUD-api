@@ -27,7 +27,13 @@ public class ProductDB {
     public List<Product> findByCategory(String category){
         return repo.findByCategory(category);
     }
+    public double getPriceById(int pid){
+        Product p = repo.getById(pid);
+        return p.getPrice();
+    }
 
-
-
+    public String getNameById(int pid) {
+        Product p = repo.getById(pid);
+        return p.getName();
+    }
 }

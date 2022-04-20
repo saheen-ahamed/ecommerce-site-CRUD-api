@@ -5,18 +5,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "products")
-public class Product {
+@Table(name = "cart")
+public class Cart {
     @Id
     @GeneratedValue
     private int id;
-    private String name;
-    private String category;
+    private int pid;
+    private String productName;
     private int quantity;
-    private double price;
+    private double totalPrice;
 }

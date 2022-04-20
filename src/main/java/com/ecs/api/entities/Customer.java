@@ -3,24 +3,27 @@ package com.ecs.api.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Indexed;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "customers")
 @Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private int id;
-    private String firstName;
-    private String lastName;
+
+    @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
 }
